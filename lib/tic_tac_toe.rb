@@ -84,7 +84,7 @@ class TicTacToe
   end
   
   def over?
-    if (won? || full?)
+    if (won? || draw?)
       return true
     end
     return false
@@ -97,7 +97,7 @@ class TicTacToe
   end
   
   def play
-    until (over? || draw?)
+    until (over?)
       turn
     end
     if (won?)
