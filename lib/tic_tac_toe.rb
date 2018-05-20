@@ -47,12 +47,12 @@ class TicTacToe
     input = gets.to_s.strip
     index = input_to_index(input)
     if (valid_move?(index))
-      @board = move(index, current_player())
+      @board = move(index, current_player)
     else
       puts "Invalid move!"
-      return turn()
+      return turn
     end
-    display_board()
+    display_board
   end
   
   def turn_count
@@ -62,4 +62,6 @@ class TicTacToe
   def current_player(board)
     turn_count % 2 == 0 ? "X" : "O"
   end
+  
+  
 end
