@@ -56,7 +56,7 @@ class TicTacToe
   end
   
   def turn_count
-    @board.count{|pos| pos == "X" || pos == "O"}
+    @board.count {|pos| pos == "X" || pos == "O"}
   end
   
   def current_player
@@ -68,6 +68,24 @@ class TicTacToe
       if ((@board[wincombo[0]] == "X" && @board[wincombo[1]] == "X" && @board[wincombo[2]] == "X") || (@board[wincombo[0]] == "O" && @board[wincombo[1]] == "O" && @board[wincombo[2]] == "O"))
         return wincombo
       end
+    return false
+  end
+  
+  def full?
+    return @board.all? {|pos| pos == "X" || pos == "O"}
+  end
+  
+  def draw?
+    if (!won? && full?)
+      return true
+    end
+    return false
+  end
+  
+  def over?
+    if (won? || full?)
+      return true
+    end
     return false
   end
   
