@@ -42,5 +42,16 @@ class TicTacToe
     return false
   end
   
-  
+  def turn
+    puts "Please enter 1-9:"
+    input = gets.to_s.strip
+    index = input_to_index(input)
+    if (valid_move?(index))
+      @board = move(index, current_player())
+    else
+      puts "Invalid move!"
+      return turn()
+    end
+    display_board()
+  end
 end
