@@ -68,6 +68,7 @@ class TicTacToe
       if ((@board[wincombo[0]] == "X" && @board[wincombo[1]] == "X" && @board[wincombo[2]] == "X") || (@board[wincombo[0]] == "O" && @board[wincombo[1]] == "O" && @board[wincombo[2]] == "O"))
         return wincombo
       end
+    end
     return false
   end
   
@@ -94,4 +95,5 @@ class TicTacToe
       return @board[won?(board)[0]]
     end
   end
+  
 end
